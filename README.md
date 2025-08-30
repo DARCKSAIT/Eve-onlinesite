@@ -37,3 +37,31 @@ Une action GitHub (`.github/workflows/pages.yml`) publie automatiquement la raci
 
 ## Contributions
 Les contributions sont bienvenues via issues ou pull requests. Merci de respecter la ligne éditoriale et les liens relatifs.
+
+## Gestion des merges
+Pour éviter d'avoir à nettoyer manuellement les marqueurs `<<<<<<<`, `=======` et `>>>>>>>` lors d'une mise à jour :
+
+1. Synchronisez d'abord votre copie locale avec la branche `main` :
+
+```bash
+git pull --rebase origin main
+```
+
+2. En cas de conflit, choisissez rapidement une version complète du fichier :
+
+```bash
+# garder votre version
+git checkout --ours chemin/du/fichier
+
+# ou prendre la version distante
+git checkout --theirs chemin/du/fichier
+```
+
+3. Marquez le fichier comme résolu puis poursuivez la fusion ou le rebase :
+
+```bash
+git add chemin/du/fichier
+git rebase --continue  # ou git commit si vous étiez en merge
+```
+
+Un fichier `.gitattributes` est également fourni pour forcer en dernier recours la stratégie « ours » et empêcher l'apparition de marqueurs de conflit, au prix de l'écrasement des modifications distantes concurrentes.
