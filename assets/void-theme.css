@@ -1,17 +1,33 @@
 body {
   background: #111;
   color: #eee;
+codex/set-up-nova-vox-interstellar-static-site-vuxm5c
   font-family: Arial, sans-serif; line-height: 1.6;
+  font-family: Arial, sans-serif;
+main
   margin: 0;
   padding: 0;
 }
 
+codex/set-up-nova-vox-interstellar-static-site-vuxm5c
 header {background:#222;padding:1rem;text-align:center;}
 nav {background:#222;padding:0.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;}
 
 nav a { color:#6cf; text-decoration:none; }
 nav a:hover { text-decoration:underline; }
 nav a.active { color:#fff; }
+header, nav {
+  background: #222;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: #6cf;
+  text-decoration: none;
+}
+main
 
 main {
   max-width: 800px;
@@ -28,6 +44,9 @@ ul.posts li {
   margin-bottom: 0.5rem;
 }
 
+codex/set-up-nova-vox-interstellar-static-site-vuxm5c
+codex/set-up-nova-vox-interstellar-static-site-lcxmnz
+main
 .hero {
   position: relative;
   text-align: center;
@@ -79,13 +98,23 @@ ul.posts li {
   text-decoration: none;
 }
 
+codex/set-up-nova-vox-interstellar-static-site-vuxm5c
 footer { background:#222; text-align:center; padding:1rem; margin-top:2rem; }
 
+main
+main
 @media (max-width: 600px) {
   body {
     font-size: 16px;
   }
+codex/set-up-nova-vox-interstellar-static-site-vuxm5c
   .feature {
     flex: 1 1 100%;
   }
+codex/set-up-nova-vox-interstellar-static-site-lcxmnz
+  .feature {
+    flex: 1 1 100%;
+  }
+main
+main
 }
