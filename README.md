@@ -13,6 +13,9 @@ Aucun outil de build n'est nécessaire :
 
 ```bash
 # depuis la racine du dépôt
+codex/set-up-nova-vox-interstellar-static-site-lcxmnz
+ codex/set-up-nova-vox-interstellar-static-site-0v0deg
+main
 ./warp.sh
 ```
 
@@ -30,6 +33,25 @@ Ouvrir ensuite [http://localhost:8000/index.html](http://localhost:8000/index.ht
 1. Copier un fichier de `posts/` comme gabarit et éditer le contenu.
 2. Ajouter une entrée correspondante dans `assets/starlog.json` (voir schéma existant).
 3. Vérifier le JSON : `python -m json.tool assets/starlog.json`.
+codex/set-up-nova-vox-interstellar-static-site-lcxmnz
+python -m http.server 8000
+```
+
+Puis ouvrir [http://localhost:8000/index.html](http://localhost:8000/index.html) dans un navigateur.
+
+## Structure principale
+- `index.html` – accueil et dernières publications
+- `archives.html` – liste complète et recherche locale
+- `edition-semaine.html`, `analyse-financiere.html`, etc. – pages catégories
+- `posts/` – articles individuels
+- `assets/` – `style.css`, `script.js` et `posts.json` (index des articles)
+
+## Ajouter un article
+1. Copier un fichier de `posts/` comme gabarit et éditer le contenu.
+2. Ajouter une entrée correspondante dans `assets/posts.json` (voir schéma existant).
+3. Vérifier le JSON : `python -m json.tool assets/posts.json`.
+main
+main
 4. Commit & push sur `main` pour déclencher le déploiement GitHub Pages.
 
 ## Déploiement
