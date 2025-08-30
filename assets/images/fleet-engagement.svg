@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="fe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090a14"/>
+      <stop offset="100%" stop-color="#161b2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#fe)"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="42" fill="#ffffff">Archives stellaires</text>
+</svg>
