@@ -12,6 +12,7 @@
 <main>
   <h1>Connexion</h1>
   <p id="sso">Redirection vers EVE Online…</p>
+  <p><a id="sso" href="#">Se connecter avec EVE Online</a></p>
 </main>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const url = `https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=${client}&redirect_uri=${redirect}&scope=${scopes}&state=${state}`;
   document.getElementById('sso').textContent = 'Redirection en cours…';
   window.location.href = url;
+  document.getElementById('sso').href = url;
+  const url = `https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=${client}&redirect_uri=${redirect}&scope=${scopes}`;
+  document.getElementById('sso').setAttribute('href', url);
 });
 </script>
 </body>
