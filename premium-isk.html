@@ -38,6 +38,15 @@
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   const hash = new URLSearchParams(window.location.hash.substring(1));
+  const status = document.getElementById('premium-status');
+  const state = hash.get('state');
+  const expected = localStorage.getItem('oauth_state');
+  if (hash.get('access_token')) {
+    if (!state || state !== expected) {
+      status.textContent = 'Échec de validation SSO. Veuillez réessayer.';
+      return;
+    }
+    localStorage.removeItem('oauth_state');
   if (hash.get('access_token')) {
     const token = hash.get('access_token');
     const expires = parseInt(hash.get('expires_in') || '0', 10);

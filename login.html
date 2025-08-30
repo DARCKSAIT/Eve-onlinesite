@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const client = 'e38fc624b2b744cf803d73926ed8c991';
   const redirect = encodeURIComponent('https://darcksait.github.io/Eve-onlinesite/premium-isk.html');
   const scopes = encodeURIComponent('esi-wallet.read_character_wallet.v1');
+  const state = Math.random().toString(36).slice(2);
+  localStorage.setItem('oauth_state', state);
+  const url = `https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=${client}&redirect_uri=${redirect}&scope=${scopes}&state=${state}`;
+  document.getElementById('sso').href = url;
   const url = `https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=${client}&redirect_uri=${redirect}&scope=${scopes}`;
   document.getElementById('sso').setAttribute('href', url);
 });
