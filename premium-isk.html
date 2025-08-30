@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
     localStorage.removeItem('oauth_state');
+  if (hash.get('access_token')) {
     const token = hash.get('access_token');
     const expires = parseInt(hash.get('expires_in') || '0', 10);
     localStorage.setItem('access_token', token);
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.location.hash = '';
   }
   const user = await loadUserStatus();
+  const status = document.getElementById('premium-status');
   if (user) {
     status.textContent = user.premium ?
       `Accès premium confirmé pour ${user.CharacterName}` :

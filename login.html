@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   localStorage.setItem('oauth_state', state);
   const url = `https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=${client}&redirect_uri=${redirect}&scope=${scopes}&state=${state}`;
   document.getElementById('sso').href = url;
+  const url = `https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=${client}&redirect_uri=${redirect}&scope=${scopes}`;
+  document.getElementById('sso').setAttribute('href', url);
 });
 </script>
 </body>
