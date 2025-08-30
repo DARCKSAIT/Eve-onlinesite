@@ -81,8 +81,10 @@ function renderCategory(posts) {
   filtered.forEach(p => container.appendChild(createPostLink(p)));
 }
 
+ codex/set-up-nova-vox-interstellar-static-site-s8siqw
  codex/set-up-nova-vox-interstellar-static-site-3r16vt
  codex/set-up-nova-vox-interstellar-static-site-g0i3pj
+ main
  main
 function highlightNav() {
   const path = window.location.pathname.split('/').pop();
@@ -93,7 +95,9 @@ function highlightNav() {
   });
 }
 
+ codex/set-up-nova-vox-interstellar-static-site-s8siqw
  codex/set-up-nova-vox-interstellar-static-site-3r16vt
+ main
  main
  main
 document.addEventListener('DOMContentLoaded', async () => {
@@ -102,10 +106,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderIndex(posts);
   renderCategory(posts);
   renderArchive(posts);
+ codex/set-up-nova-vox-interstellar-static-site-s8siqw
+  highlightNav();
  codex/set-up-nova-vox-interstellar-static-site-3r16vt
   highlightNav();
  codex/set-up-nova-vox-interstellar-static-site-g0i3pj
   highlightNav();
+ main
  main
  main
 });

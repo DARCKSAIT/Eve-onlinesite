@@ -26,6 +26,10 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+ codex/set-up-nova-vox-interstellar-static-site-s8siqw
+        with:
+          enablement: true
+ main
 
       # Pas de build : on publie la racine telle quelle
       - name: Upload artifact
