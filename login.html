@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Connexion EVE Online">
+  <title>Connexion - NVI</title>
+  <link rel="stylesheet" href="assets/void-theme.css">
+  <script defer src="assets/auth.js"></script>
+</head>
+<body>
+<main>
+  <h1>Connexion</h1>
+  <p><a id="sso" href="#">Se connecter avec EVE Online</a></p>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('access_token')) {
+    window.location.href = 'index.html';
+    return;
+  }
+  const client = 'e38fc624b2b744cf803d73926ed8c991';
+  const redirect = encodeURIComponent('https://darcksait.github.io/Eve-onlinesite/premium-isk.html');
+  const scopes = encodeURIComponent('esi-wallet.read_character_wallet.v1');
+  const state = Math.random().toString(36).slice(2);
+  localStorage.setItem('oauth_state', state);
+  const url = `https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=${client}&redirect_uri=${redirect}&scope=${scopes}&state=${state}`;
+  document.getElementById('sso').href = url;
+});
+</script>
+</body>
+</html>
