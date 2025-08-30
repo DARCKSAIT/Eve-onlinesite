@@ -1,6 +1,6 @@
 async function loadPosts() {
   const basePath = window.location.pathname.includes('/posts/') ? '../assets/' : 'assets/';
-  const response = await fetch(basePath + 'posts.json');
+  const response = await fetch(basePath + 'starlog.json');
   return await response.json();
 }
 
@@ -81,7 +81,7 @@ function renderCategory(posts) {
   filtered.forEach(p => container.appendChild(createPostLink(p)));
 }
 
- codex/set-up-nova-vox-interstellar-static-site-g0i3pj
+codex/set-up-nova-vox-interstellar-static-site-vuxm5c
 function highlightNav() {
   const path = window.location.pathname.split('/').pop();
   document.querySelectorAll('nav a').forEach(link => {
@@ -91,14 +91,15 @@ function highlightNav() {
   });
 }
 
- main
+main
 document.addEventListener('DOMContentLoaded', async () => {
   let posts = await loadPosts();
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   renderIndex(posts);
   renderCategory(posts);
   renderArchive(posts);
- codex/set-up-nova-vox-interstellar-static-site-g0i3pj
+codex/set-up-nova-vox-interstellar-static-site-vuxm5c
   highlightNav();
- main
+
+main
 });
