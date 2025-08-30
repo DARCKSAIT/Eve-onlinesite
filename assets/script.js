@@ -1,6 +1,6 @@
 async function loadPosts() {
   const basePath = window.location.pathname.includes('/posts/') ? '../assets/' : 'assets/';
-  const response = await fetch(basePath + 'starlog.json');
+  const response = await fetch(basePath + 'posts.json');
   return await response.json();
 }
 

@@ -21,15 +21,15 @@ Ouvrir ensuite [http://localhost:8000/index.html](http://localhost:8000/index.ht
 
 ## Structure principale
 - `index.html` – accueil et dernières publications
-- `archives-stellaires.html` – liste complète et recherche locale
-- `chroniques-hebdo.html`, `oracles-du-marche.html`, etc. – pages catégories
+- `archives.html` – liste complète et recherche locale
+- `edition-semaine.html`, `analyse-financiere.html`, etc. – pages catégories
 - `posts/` – articles individuels
-- `assets/` – `void-theme.css`, `stellar-index.js` et `starlog.json` (index des articles)
+- `assets/` – `style.css`, `script.js` et `posts.json` (index des articles)
 
 ## Ajouter un article
 1. Copier un fichier de `posts/` comme gabarit et éditer le contenu.
-2. Ajouter une entrée correspondante dans `assets/starlog.json` (voir schéma existant).
-3. Vérifier le JSON : `python -m json.tool assets/starlog.json`.
+2. Ajouter une entrée correspondante dans `assets/posts.json` (voir schéma existant).
+3. Vérifier le JSON : `python -m json.tool assets/posts.json`.
 4. Commit & push sur `main` pour déclencher le déploiement GitHub Pages.
 
 ## Déploiement
