@@ -81,7 +81,6 @@ function renderCategory(posts) {
   filtered.forEach(p => container.appendChild(createPostLink(p)));
 }
 
-codex/set-up-nova-vox-interstellar-static-site-vuxm5c
 function highlightNav() {
   const path = window.location.pathname.split('/').pop();
   document.querySelectorAll('nav a').forEach(link => {
@@ -91,15 +90,11 @@ function highlightNav() {
   });
 }
 
-main
 document.addEventListener('DOMContentLoaded', async () => {
   let posts = await loadPosts();
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   renderIndex(posts);
   renderCategory(posts);
   renderArchive(posts);
-codex/set-up-nova-vox-interstellar-static-site-vuxm5c
   highlightNav();
-
-main
 });
