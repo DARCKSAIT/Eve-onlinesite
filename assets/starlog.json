@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "weekly-chronicle-2025-08-27",
+    "title": "Édition de la semaine — 25→31 août 2025",
+    "date": "2025-08-27T07:00:00Z",
+    "category": "edition-semaine",
+    "category_label": "Édition de la semaine",
+    "excerpt": "Résumé neutre des infos clés, avec sources vérifiables.",
+    "url": "posts/weekly-chronicle-2025-08-27.html",
+    "sources": ["https://zkillboard.com/","https://evemaps.dotlan.net/"]
+  },
+  {
+    "slug": "plex-crash-2025-08-27",
+    "title": "Analyse PLEX du 27 août 2025",
+    "date": "2025-08-27T09:00:00Z",
+    "category": "analyse-financiere",
+    "category_label": "Analyse financière",
+    "excerpt": "Évolution du marché PLEX et facteurs macro.",
+    "url": "posts/plex-crash-2025-08-27.html",
+    "sources": ["https://markets.eveonline.com/","https://www.eveconomics.com/"]
+  },
+  {
+    "slug": "pilote-echo-001",
+    "title": "Témoignage pilote #001",
+    "date": "2025-08-27T11:00:00Z",
+    "category": "temoignages",
+    "category_label": "Témoignages",
+    "excerpt": "Récit d'un capsuleer en zone de guerre.",
+    "url": "posts/pilote-echo-001.html",
+    "sources": ["https://www.eveonline.com/"]
+  }
+]
