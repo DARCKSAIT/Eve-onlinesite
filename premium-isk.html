@@ -2,12 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-codex/set-up-nova-vox-interstellar-static-site-vuxm5c
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Nova Vox Interstellar – actualités et analyses EVE Online">
-main
   <title>Premium - NVI</title>
   <link rel="stylesheet" href="assets/void-theme.css">
+  <script defer src="assets/auth.js"></script>
   <script defer src="assets/stellar-index.js"></script>
 </head>
 <body>
@@ -23,18 +22,46 @@ main
     <a href="manifeste.html">À propos</a>
     <a href="transmissions.html">Contact</a>
     <a href="premium-isk.html">Premium</a>
+    <a href="admin.html">Admin</a>
   </nav>
 </header>
 <main>
   <h2>Premium</h2>
+  <p id="premium-status"></p>
   <p>Envoyez 10 000 ISK au personnage <strong>Nova Vox</strong> dans EVE Online.</p>
   <p>Remplissez ensuite <a href="https://forms.gle/">ce formulaire Google</a> avec votre pseudo, date, montant et capture du journal.</p>
   <p>Le rôle Discord <em>Premium NVI</em> sera attribué manuellement. Les contenus premium restent sur Discord.</p>
 </main>
-codex/set-up-nova-vox-interstellar-static-site-vuxm5c
 <footer>
   <p>© 2025 Nova Vox Interstellar</p>
 </footer>
-main
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const hash = new URLSearchParams(window.location.hash.substring(1));
+  const status = document.getElementById('premium-status');
+  const state = hash.get('state');
+  const expected = localStorage.getItem('oauth_state');
+  if (hash.get('access_token')) {
+    if (!state || state !== expected) {
+      status.textContent = 'Échec de validation SSO. Veuillez réessayer.';
+      return;
+    }
+    localStorage.removeItem('oauth_state');
+    const token = hash.get('access_token');
+    const expires = parseInt(hash.get('expires_in') || '0', 10);
+    localStorage.setItem('access_token', token);
+    localStorage.setItem('token_expires', Date.now() + expires * 1000);
+    window.location.hash = '';
+  }
+  const user = await loadUserStatus();
+  if (user) {
+    status.textContent = user.premium ?
+      `Accès premium confirmé pour ${user.CharacterName}` :
+      `Bonjour ${user.CharacterName}, accès standard.`;
+  } else {
+    status.textContent = 'Connexion requise.';
+  }
+});
+</script>
 </body>
 </html>

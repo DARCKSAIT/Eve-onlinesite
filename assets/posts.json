@@ -7,7 +7,10 @@
     "category_label": "Édition de la semaine",
     "excerpt": "Résumé neutre des infos clés, avec sources vérifiables.",
     "url": "posts/edition-2025-08-27.html",
-    "sources": ["https://zkillboard.com/","https://evemaps.dotlan.net/"]
+    "sources": [
+      "https://zkillboard.com/",
+      "https://evemaps.dotlan.net/"
+    ]
   },
   {
     "slug": "analyse-plex-2025-08-27",
@@ -17,7 +20,10 @@
     "category_label": "Analyse financière",
     "excerpt": "Évolution du marché PLEX et facteurs macro.",
     "url": "posts/analyse-plex-2025-08-27.html",
-    "sources": ["https://markets.eveonline.com/","https://www.eveconomics.com/"]
+    "sources": [
+      "https://markets.eveonline.com/",
+      "https://www.eveconomics.com/"
+    ]
   },
   {
     "slug": "temoignage-pilote-001",
@@ -27,6 +33,57 @@
     "category_label": "Témoignages",
     "excerpt": "Récit d'un capsuleer en zone de guerre.",
     "url": "posts/temoignage-pilote-001.html",
-    "sources": ["https://www.eveonline.com/"]
+    "sources": [
+      "https://www.eveonline.com/"
+    ]
+  },
+  {
+    "slug": "edition-2025-09-03",
+    "title": "Édition de la semaine — 3→9 septembre 2025",
+    "date": "2025-09-03T07:00:00Z",
+    "category": "edition-semaine",
+    "category_label": "Édition de la semaine",
+    "excerpt": "Bilan fictif des événements stellaires de la semaine.",
+    "url": "posts/edition-2025-09-03.html",
+    "sources": [
+      "https://zkillboard.com/",
+      "https://evemaps.dotlan.net/"
+    ]
+  },
+  {
+    "slug": "analyse-marche-2025-09-03",
+    "title": "Analyse du marché du 3 septembre 2025",
+    "date": "2025-09-03T09:00:00Z",
+    "category": "analyse-financiere",
+    "category_label": "Analyse financière",
+    "excerpt": "Tendances fictives des prix du PLEX et des minerais.",
+    "url": "posts/analyse-marche-2025-09-03.html",
+    "sources": [
+      "https://markets.eveonline.com/"
+    ]
+  },
+  {
+    "slug": "temoignage-pilote-002",
+    "title": "Témoignage pilote #002",
+    "date": "2025-09-03T11:00:00Z",
+    "category": "temoignages",
+    "category_label": "Témoignages",
+    "excerpt": "Un capsuleer partage son saut dans un trou de ver.",
+    "url": "posts/temoignage-pilote-002.html",
+    "sources": [
+      "https://www.eveonline.com/"
+    ]
+  },
+  {
+    "slug": "bataille-hed-gp-2025-09-03",
+    "title": "Rapport de bataille — HED-GP",
+    "date": "2025-09-03T13:00:00Z",
+    "category": "cartes-batailles",
+    "category_label": "Cartes & batailles",
+    "excerpt": "Affrontement fictif entre coalitions pour HED-GP.",
+    "url": "posts/bataille-hed-gp-2025-09-03.html",
+    "sources": [
+      "https://zkillboard.com/"
+    ]
   }
 ]

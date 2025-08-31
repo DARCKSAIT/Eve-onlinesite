@@ -1,47 +1,38 @@
 body {
-  background: #111;
-  color: #eee;
- codex/set-up-nova-vox-interstellar-static-site-s8siqw
-  font-family: Arial, sans-serif; line-height: 1.6;
- codex/set-up-nova-vox-interstellar-static-site-3r16vt
-  font-family: Arial, sans-serif; line-height: 1.6;
- codex/set-up-nova-vox-interstellar-static-site-g0i3pj
-  font-family: Arial, sans-serif; line-height: 1.6;
   font-family: Arial, sans-serif;
- main
- main
- main
+  line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
- codex/set-up-nova-vox-interstellar-static-site-s8siqw
- codex/set-up-nova-vox-interstellar-static-site-3r16vt
- codex/set-up-nova-vox-interstellar-static-site-g0i3pj
- main
- main
-header {background:#222;padding:1rem;text-align:center;}
-nav {background:#222;padding:0.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;}
-
-nav a { color:#6cf; text-decoration:none; }
-nav a:hover { text-decoration:underline; }
-nav a.active { color:#fff; }
- codex/set-up-nova-vox-interstellar-static-site-s8siqw
- codex/set-up-nova-vox-interstellar-static-site-3r16vt
-header, nav {
+header {
   background: #222;
+  color: #fff;
   padding: 1rem;
   text-align: center;
 }
 
+nav {
+  background: #222;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 nav a {
-  margin: 0 0.5rem;
   color: #6cf;
   text-decoration: none;
 }
- main
- main
- main
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  color: #fff;
+}
 
 main {
   max-width: 800px;
@@ -58,11 +49,6 @@ ul.posts li {
   margin-bottom: 0.5rem;
 }
 
- codex/set-up-nova-vox-interstellar-static-site-s8siqw
- codex/set-up-nova-vox-interstellar-static-site-3r16vt
- codex/set-up-nova-vox-interstellar-static-site-g0i3pj
- main
- main
 .hero {
   position: relative;
   text-align: center;
@@ -78,66 +64,25 @@ ul.posts li {
 
 .hero h2 {
   position: absolute;
-  top: 50%;
+  bottom: 1rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   margin: 0;
-  font-size: 2.5rem;
-}
-
-.feature-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.feature {
-  flex: 1 1 calc(33% - 1rem);
-  background: #222;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
   border-radius: 4px;
-  overflow: hidden;
-  text-align: center;
 }
 
-.feature img {
-  width: 100%;
-  height: auto;
-  display: block;
+.intro {
+  margin-bottom: 2rem;
 }
 
-.feature a {
-  display: block;
-  padding: 0.5rem;
-  color: #6cf;
+.meta {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.lead {
   font-weight: bold;
-  text-decoration: none;
-}
-
-footer { background:#222; text-align:center; padding:1rem; margin-top:2rem; }
-
- codex/set-up-nova-vox-interstellar-static-site-s8siqw
- codex/set-up-nova-vox-interstellar-static-site-3r16vt
- main
- main
- main
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
-  }
- codex/set-up-nova-vox-interstellar-static-site-s8siqw
-  .feature {
-    flex: 1 1 100%;
-  }
- codex/set-up-nova-vox-interstellar-static-site-3r16vt
-  .feature {
-    flex: 1 1 100%;
-  }
- codex/set-up-nova-vox-interstellar-static-site-g0i3pj
-  .feature {
-    flex: 1 1 100%;
-  }
- main
- main
- main
 }
