@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Inscription via EVE Online">
+  <title>Inscription - NVI</title>
+  <link rel="stylesheet" href="assets/void-theme.css">
+  <script defer src="assets/auth.js"></script>
+  <script defer src="assets/stellar-index.js"></script>
+</head>
+<body>
+<header>
+  <h1>Nova Vox Interstellar</h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="archives-stellaires.html">Archives</a>
+    <a href="chroniques-hebdo.html">Édition de la semaine</a>
+    <a href="oracles-du-marche.html">Analyse financière</a>
+    <a href="voix-des-pilotes.html">Témoignages</a>
+    <a href="plans-de-bataille.html">Cartes &amp; batailles</a>
+    <a href="manifeste.html">À propos</a>
+    <a href="transmissions.html">Contact</a>
+    <a href="inscription.html">Inscription</a>
+  </nav>
+</header>
+<main>
+  <h2>Inscription</h2>
+  <p id="register-status">Redirection vers EVE Online…</p>
+</main>
+<footer>
+  <p>© 2025 Nova Vox Interstellar</p>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const hash = new URLSearchParams(window.location.hash.substring(1));
+  const status = document.getElementById('register-status');
+  const state = hash.get('state');
+  const expected = localStorage.getItem('oauth_state');
+
+  if (hash.get('access_token')) {
+    if (!state || state !== expected) {
+      status.textContent = 'Échec de validation SSO. Veuillez réessayer.';
+      return;
+    }
+    localStorage.removeItem('oauth_state');
+    const token = hash.get('access_token');
+    const expires = parseInt(hash.get('expires_in') || '0', 10);
+    localStorage.setItem('access_token', token);
+    localStorage.setItem('token_expires', Date.now() + expires * 1000);
+    window.location.hash = '';
+    const user = await loadUserStatus();
+    if (user) {
+      status.textContent = `Bienvenue ${user.CharacterName}, inscription réussie.`;
+    } else {
+      status.textContent = 'Impossible de vérifier votre compte.';
+    }
+  } else {
+    const client = 'e38fc624b2b744cf803d73926ed8c991';
+    const redirect = encodeURIComponent('https://darcksait.github.io/Eve-onlinesite/inscription.html');
+    const scopes = encodeURIComponent('esi-wallet.read_character_wallet.v1');
+    const newState = Math.random().toString(36).slice(2);
+    localStorage.setItem('oauth_state', newState);
+    const url = `https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=${client}&redirect_uri=${redirect}&scope=${scopes}&state=${newState}`;
+    window.location.replace(url);
+  }
+});
+</script>
+</body>
+</html>

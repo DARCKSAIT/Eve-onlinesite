@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Nova Vox Interstellar – actualités et analyses EVE Online">
-  <title>Analyse financière - NVI</title>
+  <meta name="description" content="Administration Nova Vox Interstellar">
+  <title>Administration - NVI</title>
   <link rel="stylesheet" href="assets/void-theme.css">
   <script defer src="assets/auth.js"></script>
   <script defer src="assets/stellar-index.js"></script>
@@ -25,14 +25,34 @@
   </nav>
 </header>
 <main>
-  <section class="hero">
-    <img src="assets/images/analyse-financiere.svg" alt="Analyse financière">
-    <h2>Analyse financière</h2>
-  </section>
-  <ul id="category-list" data-category="analyse-financiere" class="posts"></ul>
+  <h2>Utilisateurs enregistrés</h2>
+  <table id="user-table">
+    <thead>
+      <tr><th>Personnage</th><th>Statut</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 </main>
 <footer>
   <p>© 2025 Nova Vox Interstellar</p>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadUserStatus();
+  const res = await fetch('assets/users.json');
+  const users = await res.json();
+  const tbody = document.querySelector('#user-table tbody');
+  users.forEach(u => {
+    const tr = document.createElement('tr');
+    const name = document.createElement('td');
+    name.textContent = u.name;
+    const status = document.createElement('td');
+    status.textContent = u.premium ? 'Payé' : 'Non payé';
+    tr.appendChild(name);
+    tr.appendChild(status);
+    tbody.appendChild(tr);
+  });
+});
+</script>
 </body>
 </html>
